@@ -1,9 +1,11 @@
-Name: YOUR NAME HERE
+Name: Noah
 
-| Date   |    Time    |                                                                    Update |
-|:-------|:----------:|--------------------------------------------------------------------------:|
-| Aug 22 |  8-8:30pm  | I started by thinking about my place in the universe.<br/>It was scary... |
-|        |            |                                                             And then I... |
-
+| Date   |      Time       |                                                                                                                                                                                                                                                                  Update |
+|:-------|:---------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Aug 25 | 11:30am-12:00pm |                                                I solved the first riddle by converting each alphabetic character into an int then converting to the right character. Then I solved the second one by using the split method to get each ascii code then I decrypted it. |
+| Aug 25 |  12:00-12:30pm  |                                                                                                                                                                                                                           I solved the third riddle by creating a helper method to convert a byte to a decimal number then I converted that into a char. I also documented and styled my code 
+|        |                 |                                                                                                                                                                                                                                                                         |
+|        |                 |                                                                                                                                                                                                                                                                         |
+|        |                 |                                                                                                                                                                                                                                                                         |
 
 To add a new row to the table, click into a cell and then hit shift-enter.
