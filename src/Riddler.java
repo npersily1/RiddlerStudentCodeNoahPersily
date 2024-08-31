@@ -72,16 +72,35 @@ public class Riddler {
         String decrypted = "";
 
         // TODO: Complete the decryptFour() function.
+        for (int i = 0; i < encrypted.length(); i++) {
 
+            // Convert the letter to a number and add 9
+            int temp = (int) encrypted.charAt(i) -  9919;
+            // If it is lowercase check if the letter is out of bounds and correct
+            if (Character.isLowerCase(encrypted.charAt(i))) {
+                if (temp > 122) {
+                    temp -= 26;
+                }
+            }
+            // Same but with upper case
+            else {
+                if (temp > 90) {
+                    temp -= 26;
+                }
+                // Add it to the decrypted message
+                decrypted += (char) temp;
+            }
+        }
         return decrypted;
     }
+
     // Takes in a String with 8 letters being either 1 or 0 and returns it as a decimal number
     public int byteToInt(String s) {
         int temp = 0;
         // For each bit in the String
         for (int i = 0; i < 8; i++) {
             // Multiply the value by 2^ to it's position and add it to the number to be returned
-            temp += (Integer.parseInt(s.substring(i, i + 1))) * (int) Math.pow(2, (8 - i - 1));
+            temp += (Integer.parseInt(s.substring(i, i + 1))) * (1 << (8 - i - 1));
         }
         return temp;
     }

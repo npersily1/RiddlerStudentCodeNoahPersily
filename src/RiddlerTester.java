@@ -27,7 +27,9 @@ public class RiddlerTester {
     @Test
     public void testFour() {
         setTestData("4");
-        solver.decryptFour(encrypted);
+        System.out.println(solver.decryptFour(encrypted));
+        System.out.println((int) encrypted.charAt(4));
+
     }
 
     private void setTestData(String text) {
