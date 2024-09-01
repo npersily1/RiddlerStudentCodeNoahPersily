@@ -8,8 +8,13 @@
  */
 public class Riddler {
 
+    public static int CAESAR_KEY_ONE = 9,
+                        CAESAR_KEY_FOUR = -9919;
+
+
     public String decryptOne(String encrypted) {
         String decrypted = "";
+
 
         // TODO: Complete the decryptOne() function.
 
@@ -20,19 +25,15 @@ public class Riddler {
                 // Keep it the same and add it to the decrypted message
                 decrypted += encrypted.charAt(i);
             } else {
-                // Convert the letter to a number and add 9
-                int temp = (int) encrypted.charAt(i) + 9;
+                // Convert the letter to a number and add the key
+                int temp = (int) encrypted.charAt(i) + CAESAR_KEY_ONE;
                 // If it is lowercase check if the letter is out of bounds and correct
                 if (Character.isLowerCase(encrypted.charAt(i))) {
-                    if (temp > 122) {
-                        temp -= 26;
-                    }
+                    temp = (temp - 97) % 26 + 97;
                 }
                 // Same but with upper case
                 else {
-                    if (temp > 90) {
-                        temp -= 26;
-                    }
+                    temp = (temp - 65) % 26 + 65;
                 }
                 // Add it to the decrypted message
                 decrypted += (char) temp;
@@ -74,22 +75,9 @@ public class Riddler {
         // TODO: Complete the decryptFour() function.
         for (int i = 0; i < encrypted.length(); i++) {
 
-            // Convert the letter to a number and add 9
-            int temp = (int) encrypted.charAt(i) -  9919;
-            // If it is lowercase check if the letter is out of bounds and correct
-            if (Character.isLowerCase(encrypted.charAt(i))) {
-                if (temp > 122) {
-                    temp -= 26;
-                }
-            }
-            // Same but with upper case
-            else {
-                if (temp > 90) {
-                    temp -= 26;
-                }
-                // Add it to the decrypted message
-                decrypted += (char) temp;
-            }
+            // Convert the letter to a number and add the key
+            int temp = (int) encrypted.charAt(i) + CAESAR_KEY_FOUR;
+            decrypted += (char) temp;
         }
         return decrypted;
     }

@@ -28,7 +28,7 @@ public class RiddlerTester {
     public void testFour() {
         setTestData("4");
         System.out.println(solver.decryptFour(encrypted));
-        System.out.println((int) encrypted.charAt(4));
+
 
     }
 
